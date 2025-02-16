@@ -1,0 +1,36 @@
+    private void heapifyUp(int index){
+        int itemIndex = index;
+        int currentData = data[index];
+        int parentIndex = getParentIndex(index);
+        int parentData = data[parentIndex];
+        while(currentData < parentData && itemIndex != 0){
+            swap(itemIndex, parentIndex);
+            //move up the heap
+            currentData = parentData;
+            index = parentIndex;
+            parentIndex = getParentIndex(index);
+            parentData = data[parentIndex];
+        } // end while
+    } // end heapifyUp()
+
+     public void heapifyUp(int index){
+            int itemIndex = index;
+            while(data[itemIndex] < data[getParentIndex(index)] && itemIndex != 0){
+                swap(itemIndex, getParentIndex(index));
+                itemIndex = getParentIndex(index);
+            }
+     }
+
+    public void show(){
+           for (int i = 0; i < size; i++) {
+               System.out.printf("%d : %d \n", i, data[i]);
+           }
+        }
+
+           public void heapifyUp(int index){
+
+                while(data[index] < data[getParentIndex(index)]){
+                    swap(index, getParentIndex(index));
+                    index = getParentIndex(index);
+                }
+            }
